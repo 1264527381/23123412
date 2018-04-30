@@ -7,8 +7,9 @@ echo "请输入你的内网ip"
 read -p "内网ip： " ip
 cp /root/PUBG_XiNian_02/restart.sh /root/restart.sh
 chmod +x restart.sh
-yum -y install 
-wgetwget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+chmod +x shadowsocks-all.sh
+./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
 
 
 echo "ss搭建成，请记住连接信息"
